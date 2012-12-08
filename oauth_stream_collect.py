@@ -4,7 +4,6 @@ import oauth2 as oauth
 import time
 from twisted.internet import reactor, protocol, ssl
 from twisted.web import http
-import simplejson as sj
 
 CONSUMER_KEY = ''
 CONSUMER_SECRET = ''
@@ -21,7 +20,24 @@ TWITTER_STREAM_API_PATH = '/1.1/statuses/sample.json'
 
 def daemon(tweet):
     '''Loop continuously, saving data to files.''' 
-    print tweet
+    global file_dt
+    now = datetime.datetime.now()
+    if file_dt.hour == now.hour:
+        filename = file_dt.strftime('%Y-%m-%d-%H.json')
+        out = open(filename,'a+')
+        out.write(tweet)
+        out.write('\n')
+        out.close()
+            
+    elif (file_dt.hour + 1) % 24 == now.hour:
+        file_dt = datetime.datetime.now()
+        filename = file_dt.strftime('%Y-%m-%d-%H.json')
+        out = open(filename,'a+')
+        out.write(tweet)
+        out.write('\n')
+        out.close()
+
+       
    
 class TwitterStreamer(http.HTTPClient):
     def connectionMade(self):
@@ -104,5 +120,4 @@ if __name__ == '__main__':
     #(host, port(ssl), factory, contextfactory, timeout, bindaddress)
     
     reactor.run()
-    
-    
+
