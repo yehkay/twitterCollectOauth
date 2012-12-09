@@ -49,3 +49,8 @@ twitterCollectOauth
 
 #### This <a href='http://mike.teczno.com/notes/streaming-data-from-twitter.html'>Blog Post</a> by Michal Migurski demonstrates how to convert this tweets list into a .csv file which can easily be read by Excel, MySql etc,.
       
+## Some stats about the Sample stream(as on Dec 08, 2012)
+* Sample Stream is 1% of twitter stream
+* Sample stream per hour uncompressed
+       - Approx filesize: 550MB/hr (13.2 GB/day)
+       - Approx 210,000 Tweets/hr
