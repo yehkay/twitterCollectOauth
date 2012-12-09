@@ -5,12 +5,12 @@ import time
 from twisted.internet import reactor, protocol, ssl
 from twisted.web import http
 
-CONSUMER_KEY = ''
-CONSUMER_SECRET = ''
+CONSUMER_KEY = 'consumer key'
+CONSUMER_SECRET = 'consumer secret'
 CONSUMER = oauth.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
 
-ACCESS_KEY=''
-ACCESS_SECRET=''
+ACCESS_KEY='access token'
+ACCESS_SECRET='access token secret'
 ACCESS = oauth.Token(ACCESS_KEY, ACCESS_SECRET)
 
 TWITTER_STREAM_API_HOST = 'stream.twitter.com'
