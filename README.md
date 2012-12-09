@@ -47,4 +47,5 @@ twitterCollectOauth
         tweet = tweets[0]   #look at a single tweet
         print tweet
 
+#### This <a href='http://mike.teczno.com/notes/streaming-data-from-twitter.html'>Blog Post</a> by Michal Migurski demonstrates how to convert this tweets list into a .csv file which can easily be read by Excel, MySql etc,.
       
